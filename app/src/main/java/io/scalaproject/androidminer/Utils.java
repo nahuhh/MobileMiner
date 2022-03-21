@@ -66,23 +66,16 @@ public final class Utils {
 
     static public final String SCALA_BTC_ADDRESS = "1XTLY5LqdBXRW6hcHtnuMU7c68mAyW6qm";
     static public final String SCALA_ETH_ADDRESS = "0x133a15dF7177823Dd407ca87A190bbE4585a379e";
-    static public final String SCALA_XLA_ADDRESS = "SvkFLjR4DST5bAG8SSHWfta4MsCzRrDEPNx72cTetqcoPfkwi7cFA2sYGG2Tf51rQ9EMSPHVuzxeoS4Y7ieicg5A1M24A8TTW";
+    static public final String SCALA_XLA_ADDRESS = "841oapGtndtYweLH5ezFbRFyR2sWSstpD2i5yUA23AcZFsfsP9LrP1GiwLPdVxNv3x9ExAbDueeMmE2h8P9Y4cAvSJhHwmx";
     static public final String SCALA_LTC_ADDRESS = "LeLK5hopvfArVyKtkZBzF3B5wj6rGrNUGk";
 
-    static public final String ADDRESS_REGEX_MAIN = "^S+([1-9A-HJ-NP-Za-km-z]{96})$";
-    static public final String ADDRESS_REGEX_SUB = "^Ss+([1-9A-HJ-NP-Za-km-z]{96})$";
 
     static public boolean verifyAddress(String input) {
-        Pattern p = Pattern.compile(Utils.ADDRESS_REGEX_MAIN);
-        Matcher m = p.matcher(input.trim());
-        if(m.matches()) {
+        if(input.length() == 95) {
             return true;
+        } else {
+            return false;
         }
-
-        p = Pattern.compile(Utils.ADDRESS_REGEX_SUB);
-        m = p.matcher(input.trim());
-
-        return m.matches();
     }
 
     static public float convertStringToFloat(String sNumber) {
@@ -272,7 +265,7 @@ public final class Utils {
                 .setPositiveButton(context.getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Uri uri = Uri.parse(context.getResources().getString(R.string.mobileminerLink));
+                        Uri uri = Uri.parse(context.getResources().getString(R.string.mobileminerLink)); // Update link
                         context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
                     }
                 })
