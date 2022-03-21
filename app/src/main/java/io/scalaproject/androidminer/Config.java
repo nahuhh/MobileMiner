@@ -70,8 +70,8 @@ public class Config {
     public final static int DefaultCooldownTheshold = 10; // 5,10,15,20,25
 
     public static final Long statsDelay = 30000L;
-    public static final String miner_xlarig = "xlarig";
-    static final String algo = "panthera";
+    public static final String miner_xlarig = "xmrig";
+    static final String algo = null;
 
     public static final String CONFIG_KEY_CONFIG_VERSION = "config_version";
     public static final String version = "4";
